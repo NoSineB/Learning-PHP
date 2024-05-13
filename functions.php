@@ -19,3 +19,12 @@ function authorise($condition, $status_code = Response::FORBIDDEN){
         abort($status_code);
     }
 }
+
+function base_dir($url){
+    return BASE_DIR."{$url}";
+}
+
+function view($filename, $array=[]){
+    extract($array);
+    return require base_dir("views/{$filename}"); 
+}
