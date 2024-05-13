@@ -1,20 +1,20 @@
 <?php
 
+require 'Validator.php';
+
 $heading = 'Add Note';
 
 $config = require('config.php');
+
 $db = new Database($config['database']);
+
 
 if($_SERVER["REQUEST_METHOD"]== "POST"){
 
     $errors = [];
 
-    if(strlen($_POST["body"]) == 0){
-        $errors["body"] = "A Body is needed";
-    }
-
-    if(strlen($_POST["body"]) >10){
-        $errors["body"] = "Body Characters execeds the limit 1000";        
+    if(! Validator::string($_POST["body"], 1, 1000)){
+        $errors['body'] = "Enter Body not more than 1000 characters";
     }
 
     if(empty($errors)){
