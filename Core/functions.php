@@ -11,22 +11,35 @@ function dd($value)
     die();
 }
 
-function urlIs($value) {
+function urlIs($value)
+{
     return $_SERVER['REQUEST_URI'] === $value;
 }
 
 
-function authorise($condition, $status_code = Response::FORBIDDEN){
-    if(!$condition){
+function authorise($condition, $status_code = Response::FORBIDDEN)
+{
+    if (!$condition) {
         abort($status_code);
     }
 }
 
-function base_dir($url){
-    return BASE_DIR."{$url}";
+function base_dir($url)
+{
+    return BASE_DIR . "{$url}";
 }
 
-function view($filename, $array=[]){
+function view($filename, $array = [])
+{
     extract($array);
-    return require base_dir("views/{$filename}"); 
+    return require base_dir("views/{$filename}");
+}
+
+function abort($code = 404)
+{
+    http_response_code($code);
+
+    require base_dir("views/{$code}.php");
+
+    die();
 }
