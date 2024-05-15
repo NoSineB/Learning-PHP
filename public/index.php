@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 const BASE_DIR = __DIR__.'/../';
 
 require BASE_DIR."Core/functions.php";
