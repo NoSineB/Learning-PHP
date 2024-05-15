@@ -1,9 +1,10 @@
 <?php
 
+use Core\App;
 use Core\Database;
 
-$config = require base_dir('config.php');
-$db = new Database($config['database']);
+$db = App::container(Database::class);
+
 $currentUser = 1;
 
 

@@ -2,11 +2,11 @@
 
 use Core\Database;
 use Core\Validator;
+use Core\App;
 
 $errors = [];
 
-$config = require base_dir('config.php');
-$db = new Database($config['database']);
+$db = App::container(Database::class);
 
 if (!Validator::string($_POST["body"], 1, 1000)) {
     $errors['body'] = "Enter Body not more than 1000 characters";
