@@ -6,24 +6,12 @@ $config = require base_dir('config.php');
 $db = new Database($config['database']);
 $currentUser = 1;
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $note = $db->query('select * from notes where id = :id', ['id' => $_GET['id']])->findOrFail();
 
-    authorise($note['user_id'] == $currentUser);
+$note = $db->query('select * from notes where id = :id', ['id' => $_GET['id']])->findOrFail();
 
-    $db->query('delete from notes where id = :id', ['id' => $_GET['id']]);
+authorise($note['user_id'] == $currentUser);
 
-    header("location: /notes");
-    exit();
-
-} else {
-
-    $note = $db->query('select * from notes where id = :id', ['id' => $_GET['id']])->findOrFail();
-
-    authorise($note['user_id'] == $currentUser);
-
-    view('notes/show.view.php', [
-        'heading' => 'Note',
-        'note' => $note
-    ]);
-}
+view('notes/show.view.php', [
+    'heading' => 'Note',
+    'note' => $note
+]);

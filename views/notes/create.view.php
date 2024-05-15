@@ -4,7 +4,7 @@
 
 <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-        <form action="" class="flex flex-col" method="POST">
+        <form action="/notes" class="flex flex-col" method="POST">
             <div class="mb-4">
                 <label for="body">Body</label>
             </div>
