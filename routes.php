@@ -6,7 +6,7 @@ $router->get("/about", "controllers/about.php");
 $router->get("/contact", "controllers/contact.php");
 
 // REST Notes Path
-$router->get("/notes", "controllers/notes/index.php");
+$router->get("/notes", "controllers/notes/index.php")->only('auth');
 $router->get("/note", "controllers/notes/show.php");
 $router->patch("/note", "controllers/notes/update.php");
 $router->delete("/notes", "controllers/notes/destroy.php");
@@ -15,5 +15,5 @@ $router->get("/notes/create", "controllers/notes/create.php");
 $router->get("/note/edit", "controllers/notes/edit.php");
 
 // User Registeration Path
-$router->get("/register", "controllers/register/index.php");
+$router->get("/register", "controllers/register/index.php")->only('guest');
 $router->post("/register", "controllers/register/store.php");
