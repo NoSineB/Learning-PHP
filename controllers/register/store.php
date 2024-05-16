@@ -41,9 +41,9 @@ $db->query('INSERT INTO `user` (`id`, `email`, `password`) VALUES (DEFAULT, :ema
     'password' => password_hash($password, PASSWORD_DEFAULT)
 ]);
 
-$_SESSION['user'] = [
+login([
     'email' => $email
-];
+]);
 
 header('location: /');
 exit();
