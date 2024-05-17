@@ -1,0 +1,11 @@
+{
+    "name": "benison/learning-php",
+    "type": "project",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}
