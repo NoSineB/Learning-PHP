@@ -36,4 +36,8 @@ class Session
         $params = session_get_cookie_params();
         setcookie('PHPSESSID', '', time() - 3600, $params['path'], $params['domain']);
     }
+
+    public static function old($key, $default=''){
+        return $_SESSION['_flash']['old'][$key] ?? $default;
+    }
 }

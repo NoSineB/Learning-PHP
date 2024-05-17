@@ -50,7 +50,8 @@ function logout()
     Session::destroy();
 }
 
-function redirect($path){
+function redirect($path)
+{
     header("location: {$path}");
     exit();
 }
@@ -62,4 +63,9 @@ function abort($code = 404)
     require base_dir("views/{$code}.php");
 
     die();
+}
+
+function old($key)
+{
+    return Session::old($key);
 }
