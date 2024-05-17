@@ -54,6 +54,11 @@ function logout()
     setcookie('PHPSESSID', '', time() - 3600, $params['path'], $params['domain']);
 }
 
+function redirect($path){
+    header("location: {$path}");
+    exit();
+}
+
 function abort($code = 404)
 {
     http_response_code($code);
