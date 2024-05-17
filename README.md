@@ -12,11 +12,11 @@ Throughout my journey as new aspiring php developer i came to understanding of h
 
 - git clone into your PC
 
-`git clone https://github.com/NoSineB/Learning-PHP`
+`git clone https://github.com/NoSineB/Notes-App-Using-PHP.git`
 
 - Change directory
 
-`cd Learning-PHP`
+`cd Notes-App-Using-PHP`
 
 - Open Terminal and run
 
@@ -24,6 +24,10 @@ Throughout my journey as new aspiring php developer i came to understanding of h
 - After Installation Run
 
 `php -S localhost:8888 -t public`
+
+*`
+Please note this might not work if you try run without seting up the proper config. Check out **config.php** to get proper clarity
+`*
 
 ## Future Updations
 
