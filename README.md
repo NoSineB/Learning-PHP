@@ -44,3 +44,10 @@ This App was not created with UI Elements in mind. I hope to improve its UI in f
 In Future i would also like to learn Unit Testing as well.
 
 
+## Updation
+
+So if you are following up until now, that means you might have seen that i have not done any updation until now. This is because instead of doing all the updations here, instead i have created a new repository **[2do App]()**.
+
+I thought out makeing updation in this same app, but after learning Laravel I thought that i should remake the same todo app using it. Hence if your are interested check it out.
+
+
